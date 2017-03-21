@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:11:59 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/19 20:18:49 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 16:33:30 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	init_ants(t_room **ant, t_room *room, size_t ants)
 	i = 0;
 	while (i < ants)
 		ant[i++] = a;
+	ant[i] = NULL;
 }
 
 static void	init_map(t_room *room)
@@ -63,7 +64,7 @@ void	init(t_room ***ant, t_room **room)
 	// TODO: ft_atoi / unsigned validation
 	a = ABS(ft_atoi(ln));
 	free(ln);
-	MGUARD(*ant = ZALT(t_room*, a));
+	MGUARD(*ant = ZALT(t_room*, a + 1));
 	;
 	ps_rooms(&ln, room);
 	ps_links(&ln, room);
