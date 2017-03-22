@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:48:12 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/19 14:35:51 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 16:46:51 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct		s_room
 {
 	char			*name;
 	unsigned		heat;
+	unsigned		heat_;
 	unsigned		type;
 	struct s_room	**exit;
 }					t_room;

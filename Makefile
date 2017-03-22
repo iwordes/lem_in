@@ -6,15 +6,15 @@
 #    By: iwordes <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/19 13:37:38 by iwordes           #+#    #+#              #
-#    Updated: 2017/03/19 13:38:39 by iwordes          ###   ########.fr        #
+#    Updated: 2017/03/21 16:25:23 by iwordes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME   = lem_in
+NAME   = lem-in
 AUTHOR = iwordes
 
 CC     = gcc
-CF     = -Wall -Wextra -Werror -I include
+CF    += -Wall -Wextra -Werror -I include
 CL     = -L "lib/ft" -l "ft" -I lib/ft/include
 
 SRC    = main.c init.c heatmap.c sort.c path.c ps/rooms.c ps/links.c
@@ -38,6 +38,12 @@ fclean: clean
 .PHONY: re
 re: fclean all
 
+.PHONY: debug
+debug:
+	rm -f lem-in
+	CF='-g' make
+	touch -amt '201701010000' lem-in
+
 # ------------------------------------------------------------------------------
 # Real Targets
 
@@ -45,4 +51,4 @@ $(NAME): $(SRC) lib/ft/libft.a
 	$(CC) $(CF) $(CL) -o $@ $^
 
 lib/ft/libft.a:
-	make re -C "lib/ft"
+	make -C "lib/ft"
