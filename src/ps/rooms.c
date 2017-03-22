@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:35:21 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 18:54:48 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 19:00:01 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ void		ps_rooms(char **ln, t_room **room)
 		if (ft_charcnt(*ln, '-') > 0)
 			return ;
 		else if (ft_charcnt(*ln, ' ') != 2)
-			error("Invalid room definition.");
+			error("Invalid room definition: Format error.");
+		else if (ft_struntil(*ln, ' ') == 0)
+			error("Invalid room definition: Empty name.");
 		push_room(room, *ln, type);
 		ft_putendl(*ln);
 		free(*ln);
