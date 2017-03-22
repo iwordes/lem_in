@@ -6,12 +6,11 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:11:51 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/19 19:21:17 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:54:20 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
-
 
 #define EXIT room->exit[e]
 #define PREXIT room->exit[e - 1]

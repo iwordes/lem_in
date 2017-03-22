@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:11:59 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 18:47:45 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:53:47 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,10 @@ static void	init_map(t_room *room)
 		}
 	if (room[i].name == NULL)
 		error("No goal defined.");
+	sort(room);
 }
 
-// What happens when no path to the dest is found?
-
-void	init(t_room ***ant, t_room **room)
+void		init(t_room ***ant, t_room **room)
 {
 	char	*ln;
 	size_t	a;
@@ -74,6 +73,4 @@ void	init(t_room ***ant, t_room **room)
 	;
 	init_map(*room);
 	init_ants(*ant, *room, a);
-
-	sort(*room);
 }

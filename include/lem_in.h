@@ -6,17 +6,17 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:48:12 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 18:17:12 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:54:58 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
 
-#include <libft.h>
-#include <stdlib.h>
+# include <libft.h>
+# include <stdlib.h>
 
-#define MGUARD(MEM) if ((MEM) == NULL) exit(12)
+# define MGUARD(MEM) if ((MEM) == NULL) exit(12)
 
 typedef struct		s_room
 {

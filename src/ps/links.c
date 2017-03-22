@@ -6,15 +6,13 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:34:24 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 18:41:35 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:55:53 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 
-// A more efficient allocation method may be used if performance issues occur.
-
-static void	push_link(t_room *room, t_room *link)
+static void		push_link(t_room *room, t_room *link)
 {
 	t_room	**tmp;
 	size_t	i;
@@ -50,7 +48,7 @@ static t_room	*find_room(t_room **room, char *name)
 #define R1 (find_room(room, *ln))
 #define R2 (find_room(room, ft_strchr(*ln, '-') + 1))
 
-void	ps_links(char **ln, t_room **room)
+void			ps_links(char **ln, t_room **room)
 {
 	t_room	*r1;
 	t_room	*r2;

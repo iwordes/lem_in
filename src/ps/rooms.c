@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:35:21 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 18:49:25 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:54:48 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	push_room(t_room **rooms, char *name, int type)
 			ft_memcpy(tmp, *rooms, sizeof(t_room) * p2);
 			free(*rooms);
 			*rooms = tmp;
-			break;
+			break ;
 		}
 	ROOM.heat = ~0;
 	ROOM.type = type;
@@ -42,7 +42,7 @@ static void	push_room(t_room **rooms, char *name, int type)
 	MGUARD(ROOM.name = ft_strsub(name, 0, ft_struntil(name, ' ')));
 }
 
-void	ps_rooms(char **ln, t_room **room)
+void		ps_rooms(char **ln, t_room **room)
 {
 	int		type;
 
