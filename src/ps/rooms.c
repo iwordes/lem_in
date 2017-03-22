@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:35:21 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/19 16:11:13 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:49:25 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ static void	push_room(t_room **rooms, char *name, int type)
 
 	i = 0;
 	while (ROOM.name != NULL)
-		i += 1;
+		if (ft_strequ(ROOM.name, name))
+			error("Duplicate room definitions.");
+		else
+			i += 1;
 	p2 = 2;
 	while (i + 1 >= (p2 *= 2))
 		if (i + 1 == p2)
@@ -56,11 +59,10 @@ void	ps_rooms(char **ln, t_room **room)
 			ft_putendl(*ln);
 			continue ;
 		}
-		if (ft_charcnt(*ln, ' ') != 2)
-		{
-			// ISSUE
+		if (ft_charcnt(*ln, '-') > 0)
 			return ;
-		}
+		else if (ft_charcnt(*ln, ' ') != 2)
+			error("Invalid room definition.");
 		push_room(room, *ln, type);
 		ft_putendl(*ln);
 		free(*ln);

@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:12:02 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/20 19:52:29 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:32:15 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(int argc, char **argv)
 	size_t	i;
 
 	///
-	ft_printf("\e[91mUSING dup2() TO LOAD FILES AS STDIN\e[0m\n");
+	ft_printf("\e[5;95m!!! USING dup2() TO LOAD FILES AS STDIN !!!\e[0m\n");
 	if (argc == 2)
 		dup2(open(argv[1], O_RDONLY), 0);
 	///

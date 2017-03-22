@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:34:24 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/19 19:56:21 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:41:35 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,19 +61,16 @@ void	ps_links(char **ln, t_room **room)
 		if ((*ln)[0] != '#')
 		{
 			if (ft_charcnt(*ln, '-') != 1)
-				; // ISSUE
+				error("Invalid link definition.");
 			r1 = R1;
 			r2 = R2;
 			if (r1 == NULL || r2 == NULL)
-				; // ISSUE
+				error("Cannot link nonexistent rooms.");
 			push_link(r1, r2);
 			push_link(r2, r1);
 		}
 		free(*ln);
 		if (ft_readln(0, ln) <= 0)
-		{
-			// ISSUE
-			break ;
-		}
+			return ;
 	}
 }

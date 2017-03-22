@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:11:59 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 16:33:30 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:47:45 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ static void	init_ants(t_room **ant, t_room *room, size_t ants)
 			break ;
 		}
 	if (a == NULL)
-		ft_eprintf("\e[91mNo starting point!\e[0m\n"); // ISSUE
+		error("No start point defined.");
+	else if (a->heat == ~0U)
+		error("No solution.");
 	i = 0;
 	while (i < ants)
 		ant[i++] = a;
@@ -45,7 +47,7 @@ static void	init_map(t_room *room)
 			break ;
 		}
 	if (room[i].name == NULL)
-		; // ISSUE
+		error("No goal defined.");
 }
 
 // What happens when no path to the dest is found?
@@ -70,8 +72,8 @@ void	init(t_room ***ant, t_room **room)
 	ps_links(&ln, room);
 	free(ln);
 	;
-	init_ants(*ant, *room, a);
 	init_map(*room);
+	init_ants(*ant, *room, a);
 
 	sort(*room);
 }

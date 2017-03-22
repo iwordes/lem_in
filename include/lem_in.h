@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:48:12 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 16:46:51 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:17:12 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct		s_room
 	unsigned		type;
 	struct s_room	**exit;
 }					t_room;
+
+void				error(const char *msg);
 
 void				init(t_room ***ant, t_room **room);
 void				heatmap(t_room *goal);

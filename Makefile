@@ -6,7 +6,7 @@
 #    By: iwordes <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/19 13:37:38 by iwordes           #+#    #+#              #
-#    Updated: 2017/03/21 16:25:23 by iwordes          ###   ########.fr        #
+#    Updated: 2017/03/21 18:20:47 by iwordes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC     = gcc
 CF    += -Wall -Wextra -Werror -I include
 CL     = -L "lib/ft" -l "ft" -I lib/ft/include
 
-SRC    = main.c init.c heatmap.c sort.c path.c ps/rooms.c ps/links.c
+SRC    = main.c error.c init.c heatmap.c sort.c path.c ps/rooms.c ps/links.c
 SRC   := $(addprefix src/,$(SRC))
 
 # ------------------------------------------------------------------------------
