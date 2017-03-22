@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:12:06 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 16:46:41 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/03/21 17:57:47 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,28 @@ static bool	pathed(t_room **ant)
 	return (true);
 }
 
+/*
+static bool	ant_in_room(t_room **ant, t_room *room)
+{
+	size_t	a;
+
+	if (room->heat == 0)
+		return (false);
+	a = ~0;
+	while (ant[a += 1] != NULL)
+		if (ANT == room)
+			return (true);
+	return (false);
+}
+*/
+
 static void	print_move(size_t ant, t_room *to)
 {
 	static size_t	i;
 
 	if (to == NULL)
 	{
-		// NOTE: Leave out for temp. debug reasons
-		//if (i != 0)
+		if (i != 0)
 			write(1, "\n", 1);
 		i = 0;
 	}
