@@ -19,6 +19,9 @@ unsigned	ft_atou(const char *str)
 	n = 0;
 	ITER(str, ft_isspace(*str));
 	while (ft_isdigit(*str))
+	{
 		n = (n * 10) + (*str - '0');
+		str += 1;
+	}
 	return (n);
 }
