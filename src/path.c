@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:12:06 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 18:52:23 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/04/11 14:05:43 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void		path(t_room **ant)
 			e = ~0;
 			while (ANT->exit[e += 1] != NULL)
 			{
-				if (EXIT->heat <= ANT->heat)
+				if (EXIT->heat <= ANT->heat_)
 				{
 					print_move(a, EXIT);
 					ANT->heat = ANT->heat_;
