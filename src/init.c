@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:11:59 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 18:53:47 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/04/11 11:21:05 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void		init(t_room ***ant, t_room **room)
 		exit(1);
 	}
 	ft_putendl(ln);
-	// TODO: ft_atoi / unsigned validation
-	a = ABS(ft_atoi(ln));
+	if ((a = ft_atou(ln)) == 0)
+		error("No ants given.");
 	free(ln);
 	MGUARD(*ant = ZALT(t_room*, a + 1));
 	;
