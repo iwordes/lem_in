@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:34:24 by iwordes           #+#    #+#             */
-/*   Updated: 2017/03/21 18:55:53 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/04/11 14:49:51 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ static t_room	*find_room(t_room **room, char *name)
 			return (*room + i);
 	return (NULL);
 }
-
-// There will be double-printing sometimes.
 
 #define R1 (find_room(room, *ln))
 #define R2 (find_room(room, ft_strchr(*ln, '-') + 1))
