@@ -47,8 +47,10 @@ debug:
 # ------------------------------------------------------------------------------
 # Real Targets
 
+COLOR ?= 0
+
 $(NAME): $(SRC) lib/ft/libft.a
-	$(CC) $(CF) $(CL) -o $@ $^
+	$(CC) $(CF) $(CL) -DCOLOR=$(COLOR) -o $@ $^
 
 lib/ft/libft.a:
 	make -C "lib/ft"

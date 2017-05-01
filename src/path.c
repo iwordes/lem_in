@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:12:06 by iwordes           #+#    #+#             */
-/*   Updated: 2017/05/01 15:15:55 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/05/01 15:55:21 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ static void	print_move(size_t ant, t_room *to)
 	{
 		if (i != 0)
 			write(1, " ", 1);
-		ft_printf("\e[9%dmL%zu-%s\e[0m", ant % 4 + 1, ant + 1, to->name);
+		if (COLOR)
+			ft_printf("\e[9%dmL%zu-%s\e[0m", ant % 4 + 1, ant + 1, to->name);
+		else
+			ft_printf("L%zu-%s", ant + 1, to->name);
 		i += 1;
 	}
 }
