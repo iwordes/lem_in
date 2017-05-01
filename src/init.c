@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:11:59 by iwordes           #+#    #+#             */
-/*   Updated: 2017/04/11 11:21:05 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/05/01 15:40:52 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,13 @@ static void	init_map(t_room *room)
 	sort(room);
 }
 
+static void	val_antcnt(const char *ln)
+{
+	ITER(ln, ft_isdigit(*ln));
+	if (*ln != 0)
+		error("No ants given.");
+}
+
 void		init(t_room ***ant, t_room **room)
 {
 	char	*ln;
@@ -64,6 +71,7 @@ void		init(t_room ***ant, t_room **room)
 	ft_putendl(ln);
 	if ((a = ft_atou(ln)) == 0)
 		error("No ants given.");
+	val_antcnt(ln);
 	free(ln);
 	MGUARD(*ant = ZALT(t_room*, a + 1));
 	;
