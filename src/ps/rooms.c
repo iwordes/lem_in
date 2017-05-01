@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:35:21 by iwordes           #+#    #+#             */
-/*   Updated: 2017/04/11 14:54:57 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/05/01 15:33:27 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,16 @@ static void	push_room(t_room **rooms, char *name, int type)
 	MGUARD(ROOM.name = ft_strsub(name, 0, ft_struntil(name, ' ')));
 }
 
+static bool	check_room(const char *ln)
+{
+	ITER(ln, *ln != ' ');
+	ITER(ln, *ln == ' ');
+	ITER(ln, ft_isdigit(*ln));
+	ITER(ln, *ln == ' ');
+	ITER(ln, ft_isdigit(*ln));
+	return (*ln == 0);
+}
+
 void		ps_rooms(char **ln, t_room **room)
 {
 	int		type;
@@ -59,7 +69,7 @@ void		ps_rooms(char **ln, t_room **room)
 		}
 		if (ft_charcnt(*ln, '-') > 0)
 			return ;
-		else if (ft_charcnt(*ln, ' ') != 2)
+		else if (ft_charcnt(*ln, ' ') != 2 || !check_room(*ln))
 			error("Invalid room definition: Format error.");
 		else if (ft_struntil(*ln, ' ') == 0)
 			error("Invalid room definition: Empty name.");
