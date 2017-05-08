@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:35:21 by iwordes           #+#    #+#             */
-/*   Updated: 2017/05/01 15:33:27 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/05/08 15:29:41 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void		ps_rooms(char **ln, t_room **room)
 			ft_strequ(*ln, "##start") && (type = 1);
 			ft_strequ(*ln, "##end") && (type = 2);
 			ft_putendl(*ln);
+			free(*ln);
 			continue ;
 		}
 		if (ft_charcnt(*ln, '-') > 0)
