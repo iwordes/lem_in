@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 12:35:21 by iwordes           #+#    #+#             */
-/*   Updated: 2017/05/08 15:29:41 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/05/11 17:43:12 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,16 @@ static void	push_room(t_room **rooms, char *name, int type)
 
 static bool	check_room(const char *ln)
 {
+	if (*ln == ' ')
+		return (false);
 	ITER(ln, *ln != ' ');
 	ITER(ln, *ln == ' ');
+	if (!ft_isdigit(*ln))
+		return (false);
 	ITER(ln, ft_isdigit(*ln));
 	ITER(ln, *ln == ' ');
+	if (!ft_isdigit(*ln))
+		return (false);
 	ITER(ln, ft_isdigit(*ln));
 	return (*ln == 0);
 }
